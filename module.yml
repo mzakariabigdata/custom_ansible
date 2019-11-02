@@ -1,0 +1,11 @@
+---
+- name: "Requete dans une base"
+  hosts: localhost
+  gather_facts: no
+  tasks:
+  - name: "compte le nombre de pages dans le Wiki"
+    test_module:
+      user="vagrant"
+      state="present"
+    register: resultat
+  - debug: var=resultat
